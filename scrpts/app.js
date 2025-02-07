@@ -44,3 +44,9 @@ cityForm.addEventListener("submit", async (e) => {
     }
   });
   
+  // year at copy right
+
+const now = new Date().getFullYear();
+year.innerHTML = `
+  <p>&copy;<span>${now}</span>, All right are reserved</p>
+`;
