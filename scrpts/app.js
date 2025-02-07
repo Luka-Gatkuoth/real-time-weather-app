@@ -4,6 +4,11 @@ const details = document.querySelector(".details");
 const card = document.querySelector(".card");
 const year = document.querySelector("footer");
 
+// convert country code to name
+const convertCountryCode = (country) => {
+    let countryName = new Intl.DisplayNames(["eng"], { type: "region" });
+    return countryName.of(country);
+  };  
 
 //updating UI
 const updateUI = (weatherData) => {
