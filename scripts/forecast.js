@@ -4,7 +4,7 @@ const units = "metric";
 // Get weather function
 const getWeather = async (city) => {
   const base = "https://api.openweathermap.org/data/2.5/weather";
-  const query = `?appid=${key}&q=${city}&unit=${units}`;
+  const query = `?appid=${key}&q=${city}&units=${units}`;
 
   const response = await fetch(base + query);
   if (!response.ok) {
