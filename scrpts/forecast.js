@@ -16,3 +16,28 @@ const getWeather = async (city) => {
   const data = await response.json(); // Parse the JSON data
   return data; // Return the data
 };
+
+const convertTimeStamp = (timestamp, timezone) => {
+    // Convert timezone from seconds to hours
+    const convertTimeZone = timezone / 3600;
+  
+    // Create a date object from the timestamp
+    let date = new Date(timestamp * 1000);
+  
+    // Create options for formatting the date
+    let options = {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true, // Corrected from hourly12 to hour12
+      timeZone: `Etc/GMT${convertTimeZone >= 0 ? "-" : "+"}${Math.abs(
+        convertTimeZone
+      )}`, // Corrected timezone string
+    };
+  
+    // Return the formatted date string
+    return date.toLocaleString("en-US", options);
+  };
