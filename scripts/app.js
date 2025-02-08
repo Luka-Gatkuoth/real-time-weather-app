@@ -42,6 +42,9 @@ const updateUI = (weatherData) => {
         console.log("night");
     }
     time.setAttribute("src", timeSrc)
+
+    // image icons
+    let iconSrc = `img/icon/${weatherData.weather.icon}.svg`
   };
 
 // Add event listener to the form
