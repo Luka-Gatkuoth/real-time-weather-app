@@ -28,7 +28,22 @@ const updateUI = (weatherData) => {
           <span>${weatherData.main.temp}</span><span>&deg;C</span>
         </div>
     `;
+    const sunrise = weatherData.sys.sunrise * 1000; // Convert to milliseconds
+    const  sunset = weatherData.sys.sunset * 1000; // Convert to milliseconds
+    const  current_time = new Date().getTime(); // Get current time in milliseconds
+
+    // Determine if it's day or night
+    let timeSrc = null;
+    if (current_time >= sunrise && current_time <= sunset) {
+      timeSrc = "img/day.svg"
+        console.log("day");
+    } else {
+        timeSrc = "img/night.svg"
+        console.log("night");
+    }
+    time.setAttribute("src", timeSrc)
   };
+
 // Add event listener to the form
 
 cityForm.addEventListener("submit", async (e) => {
