@@ -62,7 +62,18 @@ cityForm.addEventListener("submit", async (e) => {
     } catch (err) {
       console.log(err.message); // Log any errors
     }
+
+      // setLocalStorage
+      localStorage.setItem("city", city);
   });
+
+  // check if any city exist
+  if(localStorage.getItem('city')){
+    getWeather(localStorage.getItem('city'))
+    .then(data =>updateUI(data))
+    .catch(err =>console.log(err));
+  }
+
   
   // year at copy right
 
