@@ -35,7 +35,7 @@ const convertTimeStamp = (timestamp, timezone) => {
       hour12: true, // Corrected from hourly12 to hour12
       timeZone: `Etc/GMT${convertTimeZone >= 0 ? "-" : "+"}${Math.abs(
         convertTimeZone
-      )}`, // Corrected timezone string
+      )}`
     };
   
     // Return the formatted date string
