@@ -14,6 +14,7 @@ const convertCountryCode = (country) => {
 
 //updating UI
 const updateUI = (weatherData) => {
+  console.log(weatherData); 
     details.innerHTML = `
         <h5 class="my-3"><span>${
           weatherData.name
