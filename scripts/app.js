@@ -4,7 +4,7 @@ const details = document.querySelector(".details");
 const card = document.querySelector(".card");
 const year = document.querySelector("footer");
 const time = document.querySelector("img.time");
-const icon = document.querySelector(".icon img")
+const icon = document.querySelector(".icon >img")
 
 // convert country code to name
 const convertCountryCode = (country) => {
@@ -44,7 +44,6 @@ const updateUI = (weatherData) => {
     time.setAttribute("src", timeSrc)
 
     // image icons
-    let iconSrc = `img/icon/${weatherData.weather.icon}.svg`
   };
 
 // Add event listener to the form
@@ -69,5 +68,5 @@ cityForm.addEventListener("submit", async (e) => {
 
 const now = new Date().getFullYear();
 year.innerHTML = `
-  <p>&copy;<span>${now}</span>, All right are reserved</p>
+  <p> &copy; <span> ${now} </span>, All right are reserved </p>
 `;
